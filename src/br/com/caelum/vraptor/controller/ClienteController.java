@@ -35,18 +35,20 @@ public class ClienteController {
 	public List<Cliente> listarClientes(){
 		return dao.listarTodos();
 	}
-	
-	public void form(){
 		
+	@Get
+	@Path("/clientes/cadastrar")
+	public void cadastrar(){
+
 	}
 	
 	@Post
-	@Path("/cliente")
-	public void adicionar(Cliente cliente){
-
+	@Path("/clientes/cliente")
+	public void salvar(Cliente cliente){
 		cliente.setNomeCodFonetico(BuscaBr.buscaBr(cliente.getNome()));
 		dao.add(cliente);
 		result.redirectTo(ClienteController.class).listarClientes();
+		
 	}
 	@Path("/clientes/{cliente.id}")
 	@Get

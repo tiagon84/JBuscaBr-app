@@ -14,7 +14,7 @@ final public class BuscaBr {
 	final static String[] lista02Troca = 	{"n","p","s","s","s","s","s","s","s","s","s","s","t","t","t","t","t","v","r"};
 	
 	final static String[] lista03 = 	 {"h","aa","bb","cc","dd","ee","ff","gg","hh","ii","jj","kk","ll","mm","nn","oo","pp","qq","rr","ss","tt","uu","vv","ww","xx","yy","zz"};
-	final static String[] lista03Troca = {"","","","","","","","","","","","","l","m","n","","","","r","s","t","","","","","",""};
+	final static String[] lista03Troca = {"","a","","","","e","","","","i","","","l","m","n","","p","","r","s","t","","","","","",""};
 	//lista03Troca original
 	//final static String[] lista03Troca = {"","","","","","","","","","","","","","","","","","","","","","","","","","",""};
 	
