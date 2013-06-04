@@ -5,7 +5,8 @@
 <head>
 <title>Busca Fonética</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="javascript/bootstrap.js"></script>
+<script src="<c:url value="/javascript/bootstrap.js"/>"></script>
+<script src="<c:url value="/javascript/default.js"/>"></script>
 <link href="<c:url value="/css/reset.css"/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/bootstrap.css"/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/initial.css"/>" rel="stylesheet" type="text/css" />

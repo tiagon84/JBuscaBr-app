@@ -26,7 +26,7 @@ public class DefaultClienteDao implements ClienteDao {
 	public List<Cliente> procurar(String nome) {
 
 		return session.createCriteria(Cliente.class)
-				.add(Restrictions.ilike("title", "%" + nome + "%")).list();
+				.add(Restrictions.ilike("nome", "%" + nome + "%")).list();
 
 	}
 

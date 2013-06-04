@@ -3,6 +3,8 @@ package br.com.caelum.vraptor.controller;
 
 import java.util.List;
 
+import com.google.gson.JsonArray;
+
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -39,7 +41,11 @@ public class ClienteController {
 	@Get
 	@Path("/clientes/cadastrar")
 	public void cadastrar(){
-
+	}
+	
+	@Get
+	@Path("/clientes/buscar")
+	public void buscar(){
 	}
 	
 	@Post
@@ -47,7 +53,7 @@ public class ClienteController {
 	public void salvar(Cliente cliente){
 		cliente.setNomeCodFonetico(BuscaBr.buscaBr(cliente.getNome()));
 		dao.add(cliente);
-		result.redirectTo(ClienteController.class).listarClientes();
+		result.include("msg", "Cadastrado com Sucesso!").redirectTo(ClienteController.class).cadastrar();
 		
 	}
 	@Path("/clientes/{cliente.id}")
@@ -56,13 +62,13 @@ public class ClienteController {
 		result.include("cliente", cliente);
 	}
 	
-	@Path("/clientes/procurar")
+	@Path("/clientes/procura-normal")
 	@Get
-	public void procurar(Cliente cliente) {
-        if (cliente.getNome() == null) {
-            cliente.setNome("");
+	public void procurar(String nome) {
+        if (nome == "") {
+            result.redirectTo(ClienteController.class).listarClientes();
         }
 
-        result.include("clientes", this.dao.procurar(cliente.getNome()));
+        result.include("clientes", this.dao.procurar(nome));
     }
 }
