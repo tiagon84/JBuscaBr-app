@@ -13,6 +13,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.dao.ClienteDao;
 import br.com.caelum.vraptor.util.*;
+import br.com.caelum.vraptor.view.Results;
 import br.com.caelum.vraptor.entidade.Cliente;
 
 @Resource
@@ -64,11 +65,14 @@ public class ClienteController {
 	
 	@Path("/clientes/procura-normal")
 	@Get
-	public void procurar(String nome) {
-        if (nome == "") {
-            result.redirectTo(ClienteController.class).listarClientes();
+	public void procurar(Cliente cliente) {
+        if (cliente.getNome() == null) {
+            result.redirectTo(ClienteController.class).buscar();
         }
+        
+        List<Cliente> clientesEncontrados = dao.procurar(cliente.getNome());
 
-        result.include("clientes", this.dao.procurar(nome));
+        //result.include("clientes", this.dao.procurar(nome));
+        result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
     }
 }

@@ -9,7 +9,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="lA">
-				<input type="text" class="search-query input-large"	placeholder="digite um nome" id="nome" name="cliente.nome"	value="${cliente.nome}" />
+				<input type="text" class="search-query input-large"	placeholder="digite um nome" id="nome" name="cliente.nome" />
 				<a type="button" class="btn" id="procurar" ><i class="icon-thumbs-up"></i>Vai! </a>
 			</div>
 			

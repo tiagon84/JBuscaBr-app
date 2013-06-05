@@ -1,10 +1,11 @@
 var procurarNome = function() {
-	var nome = $('#nome').val();
+	var data = {};
+	data['cliente.nome']= $('#nome').val();
 	$.ajax({
 		  type: "get",
 		  url: "procura-normal",
-		  data: nome, 
-		}).done(function(data) {
+		  data: data, 
+	}).done(function(data) {
 		  console.info( data );
 		});
 };
