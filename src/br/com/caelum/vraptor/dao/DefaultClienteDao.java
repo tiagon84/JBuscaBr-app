@@ -29,6 +29,13 @@ public class DefaultClienteDao implements ClienteDao {
 				.add(Restrictions.ilike("nome", "%" + nome + "%")).list();
 
 	}
+	@SuppressWarnings("unchecked")
+	public List<Cliente> procurarBuscaBr(String nomeCodFonetico) {
+		
+		return session.createCriteria(Cliente.class)
+				.add(Restrictions.ilike("nomeCodFonetico","%"+ nomeCodFonetico+"%")).list();
+		
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<Cliente> listarTodos() {

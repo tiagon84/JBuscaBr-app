@@ -23,14 +23,10 @@ public class ClienteController {
 	
 	private final Result result;
 	
-	private final Validator validator;
-
-		
 
 	public ClienteController(ClienteDao dao, Result result, Validator validator) {
 		this.dao = dao;
 		this.result = result;
-		this.validator = validator;
 	}
 
 	@Get
@@ -75,4 +71,15 @@ public class ClienteController {
         //result.include("clientes", this.dao.procurar(nome));
         result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
     }
+	@Path("/clientes/procura-buscabr")
+	@Get
+	public void procurarComBuscaBr(Cliente cliente) {
+		if (cliente.getNome() == null) {
+			result.redirectTo(ClienteController.class).buscar();
+		}
+		cliente.setNomeCodFonetico(BuscaBr.buscaBr(cliente.getNome()));
+		List<Cliente> clientesEncontrados = dao.procurarBuscaBr(cliente.getNomeCodFonetico());
+		
+		result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
+	}
 }

@@ -13,7 +13,6 @@ public class Cliente {
 	
 	private String nome;
 	private String nomeCodFonetico;
-	private String email;
 	
 	public Long getId() {
 		return id;
@@ -33,12 +32,7 @@ public class Cliente {
 	public void setNomeCodFonetico(String nomeCodFonetico) {
 		this.nomeCodFonetico = nomeCodFonetico;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	
 	
 	

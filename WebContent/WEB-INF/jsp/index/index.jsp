@@ -2,8 +2,12 @@
 
 
 <h2>Escolha uma opção!</h2>
-<a class="btn btn-large btn-primary" href="clientes/cadastrar">Cadastrar Cliente</a>
-<a class="btn btn-large btn-primary" href="clientes/buscar">Buscar Cliente</a>
+<div class="row" style="margin: 30px;">
+	<a class="btn btn-large btn-primary" href="clientes/cadastrar">Cadastrar Cliente</a>
+	<a class="btn btn-large" href="clientes/buscar">Buscar Cliente</a>
+	<a class="btn btn-large " href="clientes/buscar">Listar Clientes</a>
+
+</div>
 
 
 <%@ include file="/footer.jsp"%>

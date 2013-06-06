@@ -60,12 +60,12 @@ final public class BuscaBr {
 			
 			textoBuilder = StringUtils.replaceEach(textoBuilder, lista03, lista03Troca);
 		  //Neste ponto é possivel retirar todas as vogais, simplinficando ainda mais o codigo fonético.
-		  //textoBuilder = StringUtils.replaceEach(textoBuilder, lista04, lista04Troca);
+		  textoBuilder = StringUtils.replaceEach(textoBuilder, lista04, lista04Troca);
 			
 			stringFinal.append(textoBuilder+" ");
 			
 		}	
-		return stringFinal.toString();
+		return stringFinal.toString().trim();
 	}
 	
 	

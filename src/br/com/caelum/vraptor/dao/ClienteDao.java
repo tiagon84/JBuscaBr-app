@@ -13,5 +13,7 @@ public interface ClienteDao{
 	List<Cliente> procurar(String nome);
 
 	List<Cliente> listarTodos();
+	
+	List<Cliente> procurarBuscaBr(String nome);
 
 }

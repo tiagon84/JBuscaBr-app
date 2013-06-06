@@ -14,11 +14,11 @@
 
 </head>
 <body>
-	<div>
-	<div class="container text-center">
+	<div class="container text-center" >
+	<div class="span10" >
 		<div class="masthead ">
 			<ul class="nav nav-pills pull-right">
-				<li class="active"><a href="#">Home</a></li>
+				<li class="active"><a href="..">Home</a></li>
 				<li><a href="#">Sobre</a></li>
 				<li><a href="#">Contato</a></li>
 			</ul>
