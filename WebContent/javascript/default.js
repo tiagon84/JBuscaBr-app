@@ -6,7 +6,10 @@ var procurarNome = function() {
 		  url: "procura-normal",
 		  data: data, 
 	}).done(function(data) {
-		  console.info( data );
+		$('.table').before('<p  class="text-info">Resultado: </p>');
+		$("#result").html();
+		$("#result").loadTemplate($("#template"), data);
+		
 		});
 };
 
@@ -14,4 +17,5 @@ $(function() {
     console.log( "o pulo do gato!" );
     
     $('#procurar').click(procurarNome);
+    
 });
