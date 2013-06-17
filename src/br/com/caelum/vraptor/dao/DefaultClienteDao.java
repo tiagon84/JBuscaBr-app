@@ -30,7 +30,7 @@ public class DefaultClienteDao implements ClienteDao {
 
 	}
 	@SuppressWarnings("unchecked")
-	public List<Cliente> procurarBuscaBr(String nomeCodFonetico) {
+	public List<Cliente> procuraJBuscaBr(String nomeCodFonetico) {
 		
 		return session.createCriteria(Cliente.class)
 				.add(Restrictions.ilike("nomeCodFonetico","%"+ nomeCodFonetico+"%")).list();

@@ -3,8 +3,6 @@ package br.com.caelum.vraptor.controller;
 
 import java.util.List;
 
-import com.google.gson.JsonArray;
-
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -12,9 +10,9 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.dao.ClienteDao;
-import br.com.caelum.vraptor.util.*;
-import br.com.caelum.vraptor.view.Results;
 import br.com.caelum.vraptor.entidade.Cliente;
+import br.com.caelum.vraptor.util.JBuscaBr;
+import br.com.caelum.vraptor.view.Results;
 
 @Resource
 public class ClienteController {
@@ -48,7 +46,7 @@ public class ClienteController {
 	@Post
 	@Path("/clientes/cliente")
 	public void salvar(Cliente cliente){
-		cliente.setNomeCodFonetico(BuscaBr.buscaBr(cliente.getNome()));
+		cliente.setNomeCodFonetico(JBuscaBr.buscaBr(cliente.getNome()));
 		dao.add(cliente);
 		result.include("msg", "Cadastrado com Sucesso!").redirectTo(ClienteController.class).cadastrar();
 		
@@ -68,7 +66,6 @@ public class ClienteController {
         
         List<Cliente> clientesEncontrados = dao.procurar(cliente.getNome());
 
-        //result.include("clientes", this.dao.procurar(nome));
         result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
     }
 	@Path("/clientes/procura-buscabr")
@@ -77,8 +74,8 @@ public class ClienteController {
 		if (cliente.getNome() == null) {
 			result.redirectTo(ClienteController.class).buscar();
 		}
-		cliente.setNomeCodFonetico(BuscaBr.buscaBr(cliente.getNome()));
-		List<Cliente> clientesEncontrados = dao.procurarBuscaBr(cliente.getNomeCodFonetico());
+		cliente.setNomeCodFonetico(JBuscaBr.buscaBr(cliente.getNome()));
+		List<Cliente> clientesEncontrados = dao.procuraJBuscaBr(cliente.getNomeCodFonetico());
 		
 		result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
 	}

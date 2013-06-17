@@ -5,7 +5,7 @@
 <div class="row" style="margin: 30px;">
 	<a class="btn btn-large btn-primary" href="clientes/cadastrar">Cadastrar Cliente</a>
 	<a class="btn btn-large" href="clientes/buscar">Buscar Cliente</a>
-	<a class="btn btn-large " href="clientes/buscar">Listar Clientes</a>
+	<a class="btn btn-large " href="clientes">Listar Clientes</a>
 
 </div>
 

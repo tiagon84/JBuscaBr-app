@@ -4,16 +4,18 @@ var procurarNome = function() {
 	$.ajax({
 		  type: "get",
 		  url: "procura-normal",
+		  dataType : "json",
 		  data: data, 
-	}).done(function(data) {
-			if(data !== undefined && data !== []){
+		  success: function(data) {
+			if(data == undefined || data.length == 0){
+				$('tbody').empty();
+				$('tbody').append('<p>Nenhum resultado encontrado</p>');
+			}else{
 				$('tr th').prepend('nome');
 				$("#result").loadTemplate($("#template"), data);
-			}else{
-				$('#message').empty();
-				$('#message').prepend('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>Nenhum resultado encontrado</div>');
 			}
-		});
+		}
+	});
 };
 var procurarNomeBuscaBr = function() {
 	var data = {};
@@ -21,14 +23,16 @@ var procurarNomeBuscaBr = function() {
 	$.ajax({
 		type: "get",
 		url: "procura-buscabr",
-		data: data, 
-	}).done(function(data) {
-		if(data === undefined & data === []){
-			$('#message').empty();
-			$('#message').prepend('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>Nenhum resultado encontrado</div>');
-		}else{
-			$('tr th').prepend('nome');
-			$("#result-buscabr").loadTemplate($("#template"), data);
+		dataType : "json",
+		data: data,
+		success: function(data) {
+			if(data == undefined || data.length == 0){
+				$('tbody').empty();
+				$('tbody').append('<p>Nenhum resultado encontrado</p>');
+			}else{
+				$('tr th').prepend('nome');
+				$("#result-buscabr").loadTemplate($("#template"), data);
+			}
 		}
 	});
 };

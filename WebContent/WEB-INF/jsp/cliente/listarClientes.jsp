@@ -2,11 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/header.jsp"%>
 <table class="table table-hover table-striped">
-<caption>Lista de Clientes</caption>
+<h3 class="text-success">Lista de Clientes</h3>
 	<thead>
 		<tr>
-			<th >nome</th>
-			<th>codigo fonetico</th>
+			<th >Nome</th>
+			<th>Código Fonético</th>
 		</tr>
 	</thead>
 	<tbody>

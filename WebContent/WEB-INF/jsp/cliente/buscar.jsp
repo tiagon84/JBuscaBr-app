@@ -34,7 +34,7 @@
 					<br/>
 				<div class="span3 table-result form-signin">
 				
-					<table class="table  table-hover">
+					<table class="table table-hover">
 						<thead>
 							<tr>
 							<th></th>

@@ -14,6 +14,6 @@ public interface ClienteDao{
 
 	List<Cliente> listarTodos();
 	
-	List<Cliente> procurarBuscaBr(String nome);
+	List<Cliente> procuraJBuscaBr(String nome);
 
 }
