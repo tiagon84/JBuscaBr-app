@@ -26,7 +26,7 @@ public class DefaultClienteDao implements ClienteDao {
 	public List<Cliente> procurar(String nome) {
 
 		return session.createCriteria(Cliente.class)
-				.add(Restrictions.ilike("nome", "%" + nome + "%")).list();
+				.add(Restrictions.like("nome", "%" + nome + "%")).list();
 
 	}
 	@SuppressWarnings("unchecked")

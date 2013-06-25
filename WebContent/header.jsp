@@ -19,9 +19,9 @@
 	<div class="span10" >
 		<div class="masthead ">
 			<ul class="nav nav-pills pull-right">
-				<li ><a href="/buscabr">Home</a></li>
-				<li><a href="/buscabr/sobre">Sobre</a></li>
-				<li><a href="/buscabr/contato">Contato</a></li>
+				<li ><a href="/jbuscabr">Home</a></li>
+				<li><a href="/jbuscabr/sobre">Sobre</a></li>
+				<li><a href="/jbuscabr/contato">Contato</a></li>
 			</ul>
 			<h1 class="text-info">Busca Fonética</h1>
 		</div>

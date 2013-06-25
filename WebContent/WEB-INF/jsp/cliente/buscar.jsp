@@ -5,7 +5,7 @@
 	<div class="tabbable tabs-left">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#a" data-toggle="tab">Busca Regular</a></li>
-			<li><a href="#b" data-toggle="tab">BuscaBR</a></li>
+			<li><a href="#b" data-toggle="tab">JBuscaBR</a></li>
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="a">
@@ -28,7 +28,7 @@
 			</div>
 			
 			<div class="tab-pane" id="b">
-				<label>BuscaBR</label>
+				<label>JBuscaBR</label>
 				<input type="text" class="search-query input-large"	placeholder="digite um nome" id="nome-buscabr" name="cliente.nome" />
 				<a type="button" class="btn" id="procurar-buscabr" ><i class="icon-thumbs-up"></i>Vai! </a>
 					<br/>

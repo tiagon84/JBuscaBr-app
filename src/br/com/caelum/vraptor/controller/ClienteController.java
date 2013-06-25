@@ -83,7 +83,7 @@ public class ClienteController {
 		result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
 	}
 	
-	public static String decoderText(String texto) {
+	private String decoderText(String texto) {
 	    try {
 	        byte[] bytes = texto.getBytes("ISO-8859-1");
 	        texto = new String(bytes, "UTF-8");
