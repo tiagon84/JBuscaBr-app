@@ -1,6 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import br.com.caelum.vraptor.Get;
@@ -63,8 +64,9 @@ public class ClienteController {
         if (cliente.getNome() == null) {
             result.redirectTo(ClienteController.class).buscar();
         }
+        String textoTraduzido = decoderText(cliente.getNome());
         
-        List<Cliente> clientesEncontrados = dao.procurar(cliente.getNome());
+        List<Cliente> clientesEncontrados = dao.procurar(textoTraduzido);
 
         result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
     }
@@ -74,9 +76,22 @@ public class ClienteController {
 		if (cliente.getNome() == null) {
 			result.redirectTo(ClienteController.class).buscar();
 		}
-		cliente.setNomeCodFonetico(JBuscaBr.buscaBr(cliente.getNome()));
+		String textoTraduzido = decoderText(cliente.getNome());
+		cliente.setNomeCodFonetico(JBuscaBr.buscaBr(textoTraduzido));
 		List<Cliente> clientesEncontrados = dao.procuraJBuscaBr(cliente.getNomeCodFonetico());
 		
 		result.use(Results.json()).withoutRoot().from(clientesEncontrados).serialize();
+	}
+	
+	public static String decoderText(String texto) {
+	    try {
+	        byte[] bytes = texto.getBytes("ISO-8859-1");
+	        texto = new String(bytes, "UTF-8");
+	    } catch (UnsupportedEncodingException e) {
+	        e.printStackTrace();
+	        return texto;
+	    }
+
+	    return texto;
 	}
 }
