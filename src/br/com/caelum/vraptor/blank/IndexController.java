@@ -34,6 +34,17 @@ public class IndexController {
 		result.include("x", "valeu!");
 	}
 	
+	@Path("/sobre")
+	public void sobre(){
+		
+	}
+	
+	@Path("/contato")
+	public void contato(){
+		
+	}
+	
+	
 	
 
 }

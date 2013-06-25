@@ -4,6 +4,7 @@ var procurarNome = function() {
 	$.ajax({
 		  type: "get",
 		  url: "procura-normal",
+		  contentType: "charset=utf-8",
 		  dataType : "json",
 		  data: data, 
 		  success: function(data) {
@@ -23,6 +24,7 @@ var procurarNomeBuscaBr = function() {
 	$.ajax({
 		type: "get",
 		url: "procura-buscabr",
+		contentType: "charset=utf-8",
 		dataType : "json",
 		data: data,
 		success: function(data) {

@@ -3,8 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Busca Fonética</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<title>Busca FonÃ©tica</title>
+<script src="<c:url value="/javascript/jquery-1.10.1.js"/>"></script>
 <script src="<c:url value="/javascript/bootstrap.js"/>"></script>
 <script src="<c:url value="/javascript/jquery.loadTemplate-0.4.3.js"/>"></script>
 <script src="<c:url value="/javascript/default.js"/>"></script>
@@ -18,10 +19,10 @@
 	<div class="span10" >
 		<div class="masthead ">
 			<ul class="nav nav-pills pull-right">
-				<li class="active"><a href="..">Home</a></li>
-				<li><a href="#">Sobre</a></li>
-				<li><a href="#">Contato</a></li>
+				<li ><a href="/buscabr">Home</a></li>
+				<li><a href="/buscabr/sobre">Sobre</a></li>
+				<li><a href="/buscabr/contato">Contato</a></li>
 			</ul>
-			<h1 class="text-info">Busca Fonética</h1>
+			<h1 class="text-info">Busca FonÃ©tica</h1>
 		</div>
 		<hr />

@@ -4,13 +4,13 @@
 <fieldset>
 	<div class="tabbable tabs-left">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#a" data-toggle="tab">Busca Normal</a></li>
+			<li class="active"><a href="#a" data-toggle="tab">Busca Regular</a></li>
 			<li><a href="#b" data-toggle="tab">BuscaBR</a></li>
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="a">
 			<label>Busca Regular</label>
-				<input type="text" class="search-query input-large"	placeholder="digite um nome" id="nome" name="cliente.nome" />
+				<input type="text" class=" input-large"	placeholder="digite um nome" id="nome" name="cliente.nome" />
 				<a type="button" class="btn" id="procurar-normal" ><i class="icon-thumbs-up"></i>Vai! </a>
 				<br/>
 				<div class="span3 table-result form-signin">
